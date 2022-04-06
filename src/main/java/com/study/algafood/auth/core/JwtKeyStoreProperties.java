@@ -1,4 +1,4 @@
-package com.study.algafood.auth;
+package com.study.algafood.auth.core;
 
 import javax.validation.constraints.NotBlank;
 
