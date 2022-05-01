@@ -46,20 +46,20 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 					.withClient("checktoken")
 					.secret(passwordEncoder.encode("check123"))
 					.authorizedGrantTypes("password", "refresh_token")
-					.scopes("write", "read")
+					.scopes("WRITE", "READ")
 					.accessTokenValiditySeconds(60 * 60 * 6)//6 horas (padrão é 12 horas)
 					.refreshTokenValiditySeconds(20 * 24 * 60 * 60)
 				.and()
 					.withClient("foodanalytics")
 					.secret(passwordEncoder.encode("food123"))
 					.authorizedGrantTypes("authorization_code")
-					.scopes("write", "read")
+					.scopes("WRITE","READ")
 					.redirectUris("http://localhost:8082/")
 				.and()
 					.withClient("faturamento")
 					.secret(passwordEncoder.encode("faturamento123"))
 					.authorizedGrantTypes("client_credentials")
-					.scopes("read");//20 dias
+					.scopes("READ");//20 dias
 	}
 	
 	@Override
